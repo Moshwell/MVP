@@ -8,6 +8,9 @@
 # Log file
 *.log
 
+#ressource properties
+src/main/resources/application.properties
+
 # BlueJ files
 *.ctxt
 
