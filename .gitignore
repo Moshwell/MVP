@@ -9,8 +9,9 @@
 *.log
 
 #ressource properties
-src/main/resources/application.properties
-
+*.properties
+*.idea
+MVP.iml
 # BlueJ files
 *.ctxt
 
