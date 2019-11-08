@@ -7,7 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Client {
@@ -22,10 +27,13 @@ public class Client {
 	@Column(name="prenom")
 	private String prenom;
 	
+	@JsonManagedReference
 	@OneToMany(mappedBy="client")
 	private Set<CompteEpargne> ce;
 	
-	//private CompteCourant cc;
+	@JsonManagedReference
+	@OneToMany(mappedBy="client")
+	private  Set<CompteCourant> cc;
 	
 
 	public Integer getId() {
@@ -56,11 +64,11 @@ public class Client {
 
 		return this.cc.getSolde() + this.ce.getSolde();
 	}
-
+*/
 	public String toString() {
 		return "Nom : "+ this.nom + " - Prenom" + this.prenom + " - Compte Epargne : " + this.ce.toString() +
 				" - Compte courant : " + this.cc.toString();
 	}
 	
-*/
+
 }

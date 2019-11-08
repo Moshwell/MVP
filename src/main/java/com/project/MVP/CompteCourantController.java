@@ -1,5 +1,7 @@
 package com.project.MVP;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,11 +23,18 @@ public class CompteCourantController {
 	public @ResponseBody String addNewCc (@RequestParam String numero
 			, @RequestParam String intitule, @RequestParam double solde, @RequestParam double decouvert, @RequestParam Integer id) {
 		CompteCourant n = new CompteCourant();
-		if (userRepository.findById(id) != null) {
+		if (userRepository.existsById(id) != false) {
 		n.setNumero(numero);
 		n.setIntitule(intitule);
 		n.setSolde(solde);
 		n.setDecouvert(decouvert);
+		
+		Optional<Client> client = userRepository.findById(id);
+		if(client.isPresent()) {
+			Client client_found = client.get();
+			n.setClient(client_found);
+		}
+		
 		System.out.println(n.toString());
 		ccRepository.save(n);
 		return "Cc Saved";

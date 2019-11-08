@@ -47,7 +47,7 @@ public class ClientController {
 			return ResponseEntity.ok(client.get());
 			} else {
 			    System.out.println(" Erreur lecture client ");
-			    return null;
+			    return ResponseEntity.notFound().build();
 			    }
 			}
 		
