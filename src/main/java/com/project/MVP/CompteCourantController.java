@@ -20,7 +20,7 @@ public class CompteCourantController {
 	@PostMapping(path="/add") // Map ONLY POST Requests
 	public @ResponseBody String addNewCc (@RequestParam String numero
 			, @RequestParam String intitule, @RequestParam double solde, @RequestParam double decouvert, @RequestParam Integer id) {
-		CompteCourant n = new CompteCourant();
+		CompteCourant n = new CompteCourant(intitule, solde, decouvert);
 		if (userRepository.findById(id) != null) {
 		n.setNumero(numero);
 		n.setIntitule(intitule);

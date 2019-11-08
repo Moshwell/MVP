@@ -26,8 +26,6 @@ public class ClientController {
 		public @ResponseBody String addNewUser (@RequestParam String nom
 				, @RequestParam String prenom) {
 			Client n = new Client(nom, prenom);
-			n.setNom(nom);
-			n.setPrenom(prenom);
 			System.out.println(n.toString());
 			userRepository.save(n);
 			return "Client Saved";

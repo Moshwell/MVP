@@ -66,7 +66,13 @@ public class CompteCourant {
 	void crediter(double a) {
 		this.solde = this.solde + a;
 	}
-	
+
+	public CompteCourant (String intit, double sold, double decouv){
+        intitule = intit;
+        solde = sold;
+        decouvert = decouv;
+    }
+
 	public String toString() {
 		return "Numero : "+ this.numero + " - Intitule" + this.intitule + " - Solde : " + this.solde +
 				" - Decouvert autorisé : " + this.decouvert;

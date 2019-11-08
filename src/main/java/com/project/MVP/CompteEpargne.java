@@ -14,7 +14,7 @@ public class CompteEpargne {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="idce")
     private Integer idce;
-	
+
 	@Column(name="numero")
 	private String numero;
 	
@@ -89,6 +89,12 @@ public class CompteEpargne {
 
 	public void setClient(Client client) {
 		this.client = client;
+	}
+
+	public CompteEpargne(String intit, double sold, double inter){
+		intitule = intit;
+		solde = sold;
+		interet = inter;
 	}
 
 	public String toString() {

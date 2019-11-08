@@ -51,10 +51,14 @@ public class Client {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-
+    public Client(){
+	    id=null;
+	    nom="";
+	    prenom="";
+    }
     public Client(String pNom, String pPrenom) {
-	    nom = pNom;
-	    prenom = pPrenom;
+        this.nom = pNom;
+        this.prenom = pPrenom;
     }
 /*
 	double calculerAvoirGlobal() {

@@ -20,7 +20,7 @@ public class CompteEpargneController {
 	@PostMapping(path="/add") // Map ONLY POST Requests
 	public @ResponseBody String addNewCe (@RequestParam String numero
 			, @RequestParam String intitule, @RequestParam double solde, @RequestParam double interet, @RequestParam Integer id) {
-		CompteEpargne n = new CompteEpargne();
+		CompteEpargne n = new CompteEpargne(intitule, solde, interet);
 		if (userRepository.existsById(id) != false) {
 		n.setNumero(numero);
 		n.setIntitule(intitule);

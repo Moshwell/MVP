@@ -1,3 +1,10 @@
 com/project/MVP/CompteEpargneController.class
+com/project/MVP/CompteEpargneRepository.class
+com/project/MVP/Client.class
 com/project/MVP/CompteCourantController.class
+com/project/MVP/CompteCourantRepository.class
 com/project/MVP/ClientController.class
+com/project/MVP/CompteCourant.class
+com/project/MVP/CompteEpargne.class
+com/project/MVP/MvpApplication.class
+com/project/MVP/ClientRepository.class
