@@ -53,7 +53,6 @@ public class Client {
 	}
 
     public Client(String pNom, String pPrenom) {
-
 	    nom = pNom;
 	    prenom = pPrenom;
     }

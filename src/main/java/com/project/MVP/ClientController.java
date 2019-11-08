@@ -25,7 +25,7 @@ public class ClientController {
 		@PostMapping(path="/add") // Map ONLY POST Requests
 		public @ResponseBody String addNewUser (@RequestParam String nom
 				, @RequestParam String prenom) {
-			Client n = new Client();
+			Client n = new Client(nom, prenom);
 			n.setNom(nom);
 			n.setPrenom(prenom);
 			System.out.println(n.toString());
