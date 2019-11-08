@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class CompteEpargne {
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer idCe;
+    private Integer idce;
 	
 	private String numero;
 	
@@ -20,11 +20,11 @@ public class CompteEpargne {
 	private double interet;
 
 	public Integer getIdCe() {
-		return idCe;
+		return idce;
 	}
 
 	public void setIdCe(Integer idCe) {
-		this.idCe = idCe;
+		this.idce = idCe;
 	}
 	
 	public String getNumero() {

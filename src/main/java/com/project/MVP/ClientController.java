@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping(path="/demo")
-public class MainController {
+@RequestMapping(path="/client")
+public class ClientController {
 
 		@Autowired
 		private ClientRepository userRepository;
@@ -23,7 +23,7 @@ public class MainController {
 			n.setPrenom(prenom);
 			System.out.println(n.toString());
 			userRepository.save(n);
-			return "Saved";
+			return "Client Saved";
 		}
 
 		@GetMapping(path="/all")

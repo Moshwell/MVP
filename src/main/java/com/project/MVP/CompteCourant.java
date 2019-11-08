@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class CompteCourant {
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer idCe;
+    private Integer idcc;
 	
 	private String numero;
 	
@@ -19,12 +19,12 @@ public class CompteCourant {
 	
 	private double decouvert;
 
-	public Integer getIdCe() {
-		return idCe;
+	public Integer getIdCc() {
+		return idcc;
 	}
 
-	public void setIdCe(Integer idCe) {
-		this.idCe = idCe;
+	public void setIdCc(Integer idCc) {
+		this.idcc = idCc;
 	}
 
 	public String getNumero() {
