@@ -1,21 +1,29 @@
 package com.project.MVP;
 
+import java.util.Set;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Client {
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="id")
     private Integer id;
 	
+	@Column(name="nom")
 	private String nom;
 	
+	@Column(name="prenom")
 	private String prenom;
 	
-	//private CompteEpargne ce;
+	@OneToMany(mappedBy="client")
+	private Set<CompteEpargne> ce;
 	
 	//private CompteCourant cc;
 	

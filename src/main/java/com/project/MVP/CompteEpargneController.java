@@ -1,11 +1,15 @@
 package com.project.MVP;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+@Controller
+@RequestMapping(path="/ce")
 public class CompteEpargneController {
 	@Autowired
 	private CompteEpargneRepository ceRepository;
@@ -17,7 +21,7 @@ public class CompteEpargneController {
 	public @ResponseBody String addNewCe (@RequestParam String numero
 			, @RequestParam String intitule, @RequestParam double solde, @RequestParam double interet, @RequestParam Integer id) {
 		CompteEpargne n = new CompteEpargne();
-		if (userRepository.findById(id) != null) {
+		if (userRepository.existsById(id) != false) {
 		n.setNumero(numero);
 		n.setIntitule(intitule);
 		n.setSolde(solde);

@@ -1,23 +1,34 @@
 package com.project.MVP;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class CompteEpargne {
 	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="idce")
     private Integer idce;
 	
+	@Column(name="numero")
 	private String numero;
 	
+	@Column(name="intitule")
 	private String intitule;
 	
+	@Column(name="solde")
 	private double solde;
 	
+	@Column(name="interet")
 	private double interet;
+	
+	@ManyToOne
+	private Client client;
 
 	public Integer getIdCe() {
 		return idce;
@@ -71,6 +82,15 @@ public class CompteEpargne {
 		return (this.solde * this.interet);
 	}
 	
+	
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
 	public String toString() {
 		return "Numero : "+ this.numero + " - Intitule" + this.intitule + " - Solde : " + this.solde +
 				" - Taux Interet : " + this.interet;
