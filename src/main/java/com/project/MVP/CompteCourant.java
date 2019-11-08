@@ -8,7 +8,7 @@ import javax.persistence.Id;
 @Entity
 public class CompteCourant {
 	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer idcc;
 	
 	private String numero;
