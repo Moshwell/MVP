@@ -43,6 +43,12 @@ public class Client {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
+
+    public Client(String pNom, String pPrenom) {
+
+	    nom = pNom;
+	    prenom = pPrenom;
+    }
 /*
 	double calculerAvoirGlobal() {
 
